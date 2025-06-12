@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const { register, login } = require('../controllers/authController');
+const { sendResetLink, resetPassword } = require('../controllers/resetPasswordController');
 const authMiddleware = require('../middleware/authMiddleware');
 const User = require('../models/User');
 
@@ -11,7 +12,13 @@ router.post('/register', register);
 // ✅ Login route
 router.post('/login', login);
 
-// ✅ Protected profile route
+// ✅ Forgot Password: Send Reset Link
+router.post('/forgot-password', sendResetLink);
+
+// ✅ Reset Password using token
+router.post('/reset-password/:token', resetPassword);
+
+// ✅ Protected route: Get profile
 router.get('/profile', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');
@@ -22,4 +29,4 @@ router.get('/profile', authMiddleware, async (req, res) => {
   }
 });
 
-module.exports = router; // ✅ Export after all routes
+module.exports = router;
