@@ -1,0 +1,50 @@
+.dashboard-container {
+  padding: 3rem 2rem;
+  background: linear-gradient(to right, #f9f9ff, #f1f4ff);
+  min-height: 100vh;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.email-text {
+  color: #555;
+  font-style: italic;
+  margin-bottom: 2rem;
+}
+
+.stats-row {
+  margin-bottom: 3rem;
+}
+
+.dashboard-card {
+  background-color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card .card-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #343a40;
+}
+
+.dashboard-card .card-text {
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+.logout-section {
+  margin-top: 2rem;
+}

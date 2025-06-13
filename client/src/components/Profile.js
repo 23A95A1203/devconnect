@@ -13,9 +13,8 @@ const Profile = () => {
 
       try {
         const res = await API.get('/auth/profile', {
-          headers: {
-            Authorization: token,
-          },
+          headers: { Authorization: `Bearer ${token}` }
+,
         });
         setUser(res.data);
       } catch (err) {

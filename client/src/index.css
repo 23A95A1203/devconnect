@@ -1,6 +1,12 @@
 body {
-  background: linear-gradient(to right, #2c3e50, #3498db);
-  color: white;
-  min-height: 100vh;
+  background-color: #121212;
+  color: #ffffff;
   font-family: 'Segoe UI', sans-serif;
+}
+.btn-warning {
+  background-color: #A0C878;
+  border: none;
+}
+.btn-warning:hover {
+  background-color: #91ba6e;
 }

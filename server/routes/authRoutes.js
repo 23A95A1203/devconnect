@@ -1,8 +1,11 @@
+// routes/authRoutes.js
+
 const express = require('express');
 const router = express.Router();
 
 const { register, login } = require('../controllers/authController');
-const { sendResetLink, resetPassword } = require('../controllers/resetPasswordController');
+const { forgotPassword, resetPassword } = require('../controllers/passwordController');
+
 const authMiddleware = require('../middleware/authMiddleware');
 const User = require('../models/User');
 
@@ -13,12 +16,12 @@ router.post('/register', register);
 router.post('/login', login);
 
 // ✅ Forgot Password: Send Reset Link
-router.post('/forgot-password', sendResetLink);
+router.post('/password/forgot-password', forgotPassword);
 
 // ✅ Reset Password using token
-router.post('/reset-password/:token', resetPassword);
+router.post('/password/reset-password/:token', resetPassword);
 
-// ✅ Protected route: Get profile
+// ✅ Protected route: Get user profile
 router.get('/profile', authMiddleware, async (req, res) => {
   try {
     const user = await User.findById(req.user.id).select('-password');

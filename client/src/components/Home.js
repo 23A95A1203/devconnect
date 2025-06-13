@@ -1,41 +1,37 @@
-import { motion } from 'framer-motion';
-import { Container, Button } from 'react-bootstrap';
+import React from 'react';
+import Navbar from './Navbar';
+import './Home.css';
 
-function Home() {
+const Home = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1 }}
-    >
-      <Container className="text-center" style={{ marginTop: '15vh' }}>
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
-          className="fw-bold mb-3"
-        >
-          Welcome to DevConnect
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}
-          className="text-muted mb-4"
-        >
-          A place where developers connect, collaborate, and grow together.
-        </motion.p>
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1 }}
-        >
-          <Button variant="primary" href="/register" className="me-3">Get Started</Button>
-          <Button variant="outline-light" href="/login">Login</Button>
-        </motion.div>
-      </Container>
-    </motion.div>
+    <>
+      <Navbar />
+      <header className="hero">
+        <div className="hero-text">
+          <h1>Connecting Student Developers with <span>Real-World Projects</span></h1>
+          <p>Gain experience, earn money, and build your portfolio while helping businesses grow.</p>
+        </div>
+      </header>
+
+      <section className="features">
+        <h2>What We Do</h2>
+        <div className="cards">
+          <div className="card">
+            <h3>Connect Talent</h3>
+            <p>We bridge the gap between student developers and businesses in need of web services.</p>
+          </div>
+          <div className="card">
+            <h3>Facilitate Projects</h3>
+            <p>We manage assignments, communication, and deliverables for smooth collaboration.</p>
+          </div>
+          <div className="card">
+            <h3>Foster Growth</h3>
+            <p>Students gain opportunities to learn, earn, and build a professional portfolio.</p>
+          </div>
+        </div>
+      </section>
+    </>
   );
-}
+};
 
 export default Home;

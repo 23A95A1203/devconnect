@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Form, Button, Card, Container } from 'react-bootstrap';
+import { Form, Button } from 'react-bootstrap';
 import axios from 'axios';
+import './Register.css'; // Make sure this path is correct
 
 function Register() {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -30,34 +31,34 @@ function Register() {
   };
 
   return (
-    <Container className="d-flex justify-content-center align-items-center" style={{ height: '100vh' }}>
-      <Card className="p-4 shadow" style={{ width: '25rem' }}>
-        <h3 className="text-center mb-3">Register</h3>
+    <div className="register-container">
+      <div className="register-card">
+        <h3>Register</h3>
         <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3">
+          <Form.Group>
             <Form.Label>Username</Form.Label>
             <Form.Control name="name" type="text" placeholder="Enter username" onChange={handleChange} required />
           </Form.Group>
-          <Form.Group className="mb-3">
+          <Form.Group>
             <Form.Label>Email</Form.Label>
             <Form.Control name="email" type="email" placeholder="Enter email" onChange={handleChange} required />
           </Form.Group>
-          <Form.Group className="mb-3">
+          <Form.Group>
             <Form.Label>Password</Form.Label>
             <Form.Control name="password" type="password" placeholder="Password" onChange={handleChange} required />
           </Form.Group>
-          <Button variant="success" type="submit" className="w-100">
+          <Button type="submit" className="w-100 btn-success mt-3">
             Register
           </Button>
           {message && (
-            <p className={`mt-3 text-center ${isSuccess ? 'text-success' : 'text-danger'}`}>{message}</p>
+            <p className={`message ${isSuccess ? 'text-success' : 'text-danger'}`}>{message}</p>
           )}
         </Form>
-        <p className="mt-3 text-center">
+        <p className="mt-3">
           Already have an account? <a href="/login">Login</a>
         </p>
-      </Card>
-    </Container>
+      </div>
+    </div>
   );
 }
 

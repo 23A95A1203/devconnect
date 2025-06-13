@@ -1,0 +1,65 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(to right, #141e30, #243b55); /* same as login */
+}
+
+.register-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  width: 380px;
+  text-align: center;
+}
+
+.register-card h3 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.register-card .form-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.register-card .form-control {
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+
+.register-card .btn-success {
+  background: linear-gradient(to right, #0044ff, #5c00ff);
+  border: none;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(92, 0, 255, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.register-card .btn-success:hover {
+  background: linear-gradient(to right, #0030cc, #3d00cc);
+}
+
+.register-card a {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.register-card a:hover {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+.message {
+  margin-top: 1rem;
+  font-weight: 500;
+}

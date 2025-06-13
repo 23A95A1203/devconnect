@@ -2,27 +2,28 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
-const passwordRoutes = require('./routes/passwordRoutes');
-app.use('/api/password', passwordRoutes);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// ✅ Middleware: Add JSON parser BEFORE routes
+// Middleware
 app.use(cors());
-app.use(express.json()); // ⬅️ this must come BEFORE routes
+app.use(express.json());
 
 // ✅ Routes
 const authRoutes = require('./routes/authRoutes');
 app.use('/api/auth', authRoutes);
 
-// Test route
+const passwordRoutes = require('./routes/password'); // ✅ This must match filename
+app.use('/api/password', passwordRoutes); // ✅ This mounts the route
+
+// Default route
 app.get('/', (req, res) => {
   console.log("📩 [GET] /");
   res.send('Welcome to DevConnect API!');
 });
 
-// MongoDB connection
+// ✅ MongoDB connection
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -30,7 +31,7 @@ mongoose.connect(process.env.MONGO_URI, {
 .then(() => {
   console.log('✅ Connected to MongoDB');
   app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
+    console.log(`🚀 Server running at http://localhost:${PORT}`);
   });
 })
 .catch((error) => {

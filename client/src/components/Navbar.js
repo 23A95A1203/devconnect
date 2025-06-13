@@ -1,21 +1,23 @@
-import { Navbar, Nav, Container } from 'react-bootstrap';
+// src/components/Navbar.js
 import { Link } from 'react-router-dom';
+import './Navbar.css';
+import logo from '../assets/logo.png'; // 
 
-function AppNavbar() {
+function Navbar() {
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
-      <Container>
-        <Navbar.Brand as={Link} to="/">DevConnect</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/login">Login</Nav.Link>
-            <Nav.Link as={Link} to="/register">Register</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <nav className="navbar">
+      <div className="navbar-left">
+        <img src={logo} alt="DevConnect" className="logo" />
+      </div>
+      <ul className="navbar-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/pricing">Pricing</Link></li>
+        <li><Link to="/faq">FAQ</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/register" className="signup-btn">Sign Up</Link></li>
+      </ul>
+    </nav>
   );
 }
 
-export default AppNavbar;
+export default Navbar;
