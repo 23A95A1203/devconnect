@@ -2,7 +2,7 @@
   background: linear-gradient(to right, #0044ff, #5c00ff);
   color: white;
   text-align: center;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
 }
 
 .hero h1 {
@@ -22,9 +22,10 @@
 }
 
 .features {
-  padding: 3rem 2rem;
+  padding: 1rem 3rem;
   background-color: #f4f4f4;
   text-align: center;
+  
 }
 
 .features h2 {
@@ -37,6 +38,7 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .card {
